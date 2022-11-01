@@ -14,6 +14,10 @@ let config = {
   },
 };
 
+app.get("/", async function (req, res) {
+  res.send("Camping Locations");
+});
+
 app.get("/api/campsites", async function (req, res) {
   const results = await axios.get(
     "https://ridb.recreation.gov/api/v1/facilities?limit=50&offset=0&state=CO&lastupdated=10-01-2018",
